@@ -10,7 +10,7 @@ namespace TorresHanoi
     {
         static void Main(string[] args)
         {
-            int discs = 0;
+            int discs;
             string line;
             bool done = false;
             while (!done)
@@ -23,26 +23,24 @@ namespace TorresHanoi
                 if (discs > 0)
                 {
                     done = true;
+                    Pila ini = new Pila();
+                    Pila fin = new Pila();
+                    Pila aux = new Pila();
+                    for (int i = 0;  i < discs; i++)
+                    {
+                        ini.push(new Disco(discs - i));
+                    }
+                    Hanoi hanoi = new Hanoi();
+                    int movimientos = hanoi.iterativo(discs, ini, fin, aux);
+
+                    Console.WriteLine("Total movements.");
+                    Console.WriteLine(movimientos);
                 }
                 else
                 {
                     Console.WriteLine("Write a number.");
                 }
             }
-
-            Pila ini = new Pila();
-            Pila fin = new Pila();
-            Pila aux = new Pila();
-            for (int i = discs; i <= 0; i--)
-            {
-                ini.push(new Disco(i));
-            }
-
-            Hanoi hanoi = new Hanoi();
-            int movimientos = hanoi.iterativo(discs, ini, fin, aux);
-
-            Console.WriteLine("Total movements.");
-            Console.WriteLine(movimientos);
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");

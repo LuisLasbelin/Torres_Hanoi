@@ -1,0 +1,7 @@
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\bin\Debug\TorresHanoi.exe.config
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\bin\Debug\TorresHanoi.exe
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\bin\Debug\TorresHanoi.pdb
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\obj\Debug\TorresHanoi.csprojAssemblyReference.cache
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\obj\Debug\TorresHanoi.csproj.CoreCompileInputs.cache
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\obj\Debug\TorresHanoi.exe
+C:\Users\luisb\Desktop\GTI\Algorítmica\Torres_Hanoi\TorresHanoi\obj\Debug\TorresHanoi.pdb
