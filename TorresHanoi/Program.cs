@@ -23,9 +23,9 @@ namespace TorresHanoi
                 if (discs > 0)
                 {
                     done = true;
-                    Pila ini = new Pila();
-                    Pila fin = new Pila();
-                    Pila aux = new Pila();
+                    Pila ini = new Pila("ini");
+                    Pila fin = new Pila("fin");
+                    Pila aux = new Pila("aux");
                     for (int i = 0;  i < discs; i++)
                     {
                         ini.push(new Disco(discs - i));

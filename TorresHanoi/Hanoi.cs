@@ -18,33 +18,34 @@ namespace TorresHanoi
                 {
                     b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                     a.pop();
-                    Console.WriteLine("Moved from a to b");
+                    Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
                 }
                 // Mover el de b al a
                 else
                 {
                     a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                     b.pop();
-                    Console.WriteLine("Moved from b to a");
+                    Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
                 }
             }
             else if (a.isEmpty() && b.isEmpty())
             {
                 // nada
+                Console.WriteLine("Can't move");
             }
             else if (a.isEmpty())
             {
                 // Mover el de b al a
                 a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                 b.pop();
-                Console.WriteLine("Moved from b to a");
+                Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
             }
             else if (b.isEmpty())
             {
                 // Mover el de a al b
                 b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                 a.pop();
-                Console.WriteLine("Moved from a to b");
+                Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
             }
         }
 

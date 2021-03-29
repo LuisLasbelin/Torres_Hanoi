@@ -8,6 +8,8 @@ namespace TorresHanoi
 {
     class Pila
     {
+        public string  Name { get; set; }
+
         public int Size { get; set; }
 
         public int Top { get; set; }
@@ -15,10 +17,11 @@ namespace TorresHanoi
         public List<Disco> Elementos { get; set; }
 
         /* TODO: Implementar métodos */
-        public Pila()
+        public Pila(string name)
         {
             Top = 0;
             Elementos = new List<Disco>();
+            this.Name = name;
         }
 
         public void push(Disco d)
