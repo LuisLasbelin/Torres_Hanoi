@@ -8,8 +8,11 @@ namespace TorresHanoi
 {
     class Hanoi
     {
+
+        int m = 0;
+
         /*TODO: Implementar métodos*/
-        public void mover_disco(Pila a, Pila b)
+        public int mover_disco(Pila a, Pila b)
         {
             if (!a.isEmpty() && !b.isEmpty())
             {
@@ -19,6 +22,7 @@ namespace TorresHanoi
                     b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                     a.pop();
                     Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
+                    return 1;
                 }
                 // Mover el de b al a
                 else
@@ -26,12 +30,14 @@ namespace TorresHanoi
                     a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                     b.pop();
                     Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
+                    return 1;
                 }
             }
             else if (a.isEmpty() && b.isEmpty())
             {
                 // nada
                 Console.WriteLine("Can't move");
+                return 0;
             }
             else if (a.isEmpty())
             {
@@ -39,6 +45,7 @@ namespace TorresHanoi
                 a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                 b.pop();
                 Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
+                return 1;
             }
             else if (b.isEmpty())
             {
@@ -46,31 +53,29 @@ namespace TorresHanoi
                 b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                 a.pop();
                 Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
+                return 1;
             }
+            return 0;
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
-            int m = 0;
-
+            
             if (n % 2 != 0)
             {
                 while (true)
                 {
-                    mover_disco(ini, fin);
-                    m++;
+                    m += mover_disco(ini, fin);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
                     }
-                    mover_disco(ini, aux);
-                    m++;
+                    m += mover_disco(ini, aux);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
                     }
-                    mover_disco(aux, fin);
-                    m++;
+                    m += mover_disco(aux, fin);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
@@ -81,20 +86,17 @@ namespace TorresHanoi
             {
                 while (fin.Size < n)
                 {
-                    mover_disco(ini, aux);
-                    m++;
+                    m += mover_disco(ini, aux);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
                     }
-                    mover_disco(ini, fin);
-                    m++;
+                    m += mover_disco(ini, fin);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
                     }
-                    mover_disco(aux, fin);
-                    m++;
+                    m += mover_disco(aux, fin);
                     if (ini.isEmpty() && aux.isEmpty())
                     {
                         break;
@@ -104,5 +106,20 @@ namespace TorresHanoi
             return m;
         }
 
+        public int recursivo(int n, Pila ini, Pila fin, Pila aux)
+        {
+
+            if(n == 1)
+            {
+                m += mover_disco(ini, fin);
+            } else
+            {
+                recursivo(n - 1, ini, aux, fin);
+                m += mover_disco(ini, fin);
+                recursivo(n - 1, aux, fin, ini);
+            }
+
+            return m;
+        }
     }
 }
