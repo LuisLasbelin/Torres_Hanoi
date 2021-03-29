@@ -111,11 +111,15 @@ namespace TorresHanoi
 
             if(n == 1)
             {
+                // m es la cantidad de movimientos declarada al inicio de la clase Hanoi
                 m += mover_disco(ini, fin);
             } else
             {
+                // Se cambia el orden de las pilas y se vuelve a llamar recursivo()
                 recursivo(n - 1, ini, aux, fin);
+                // Siempre se mueven las pilas primera y segunda enviadas en las variables de entrada
                 m += mover_disco(ini, fin);
+                // Con esta llamada se tienen en cuenta todas las posibilidades de movimientos (ini,aux) (ini,fin) (fin,aux)
                 recursivo(n - 1, aux, fin, ini);
             }
 
