@@ -44,10 +44,6 @@ namespace TorresHanoi
 
                         Console.WriteLine("Total movements: " + movimientos);
                     }
-                    else
-                    {
-                        Console.WriteLine("Write a number.");
-                    }
                 } else if(line == "r")
                 {
                     Console.WriteLine("How many discs?");
@@ -73,10 +69,6 @@ namespace TorresHanoi
                         Console.WriteLine("Estimated movements: " + estimated);
 
                         Console.WriteLine("Total movements: " + movimientos);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Write a number.");
                     }
                 }
                 
