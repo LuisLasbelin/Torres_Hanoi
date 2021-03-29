@@ -19,17 +19,17 @@ namespace TorresHanoi
                 // Mover el de a al b
                 if (a.Top < b.Top)
                 {
+                    Console.WriteLine("Moved size " + a.Top + " from " + a.Name + " to " + b.Name);
                     b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                     a.pop();
-                    Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
                     return 1;
                 }
                 // Mover el de b al a
                 else
                 {
+                    Console.WriteLine("Moved size " + b.Top + " from " + b.Name + " to " + a.Name);
                     a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                     b.pop();
-                    Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
                     return 1;
                 }
             }
@@ -41,18 +41,18 @@ namespace TorresHanoi
             }
             else if (a.isEmpty())
             {
+                Console.WriteLine("Moved size " + b.Top + " from " + b.Name + " to " + a.Name);
                 // Mover el de b al a
                 a.push(b.Elementos.ElementAt(b.Elementos.Count - 1));
                 b.pop();
-                Console.WriteLine("Moved from " + b.Name + " to " + a.Name);
                 return 1;
             }
             else if (b.isEmpty())
             {
+                Console.WriteLine("Moved size " + a.Top + " from " + a.Name + " to " + b.Name);
                 // Mover el de a al b
                 b.push(a.Elementos.ElementAt(a.Elementos.Count - 1));
                 a.pop();
-                Console.WriteLine("Moved from " + a.Name + " to " + b.Name);
                 return 1;
             }
             return 0;
