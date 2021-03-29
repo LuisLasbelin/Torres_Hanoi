@@ -74,7 +74,6 @@ namespace TorresHanoi
                     {
                         break;
                     }
-                    Console.WriteLine(m);
                 }
             }
             else if (n % 2 == 0)
@@ -99,7 +98,6 @@ namespace TorresHanoi
                     {
                         break;
                     }
-                    Console.WriteLine(m);
                 }
             }
             return m;

@@ -13,7 +13,5 @@ namespace TorresHanoi
         {
             this.Valor = valor;
         }
-
-
     }
 }

@@ -33,8 +33,11 @@ namespace TorresHanoi
                     Hanoi hanoi = new Hanoi();
                     int movimientos = hanoi.iterativo(discs, ini, fin, aux);
 
-                    Console.WriteLine("Total movements.");
-                    Console.WriteLine(movimientos);
+                    double estimated = Math.Pow(2, discs) - 1;
+
+                    Console.WriteLine("Estimated movements: " + estimated);
+
+                    Console.WriteLine("Total movements: " + movimientos);
                 }
                 else
                 {
